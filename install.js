@@ -22,6 +22,8 @@
  * `puppeteer-core` package doesn't include this step at all. However, it's
  * still possible to install Chromium using this script when necessary.
  */
+const os = require('os');
+
 if (process.env.PUPPETEER_SKIP_CHROMIUM_DOWNLOAD) {
   logPolitely('**INFO** Skipping Chromium download. "PUPPETEER_SKIP_CHROMIUM_DOWNLOAD" environment variable was found.');
   return;
