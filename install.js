@@ -73,6 +73,7 @@ browserFetcher.download(revisionInfo.revision, onProgress)
  * @return {!Promise}
  */
 function onSuccess(localRevisions) {
+  if (os.arch() !== 'arm64')
   logPolitely('Chromium downloaded to ' + revisionInfo.folderPath);
   localRevisions = localRevisions.filter(revision => revision !== revisionInfo.revision);
   // Remove previous chromium revisions.
